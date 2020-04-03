@@ -1,0 +1,304 @@
+User-agent: *
+Disallow: /blog/wp-admin/
+Allow: /blog/wp-admin/admin-ajax.php
+
+
+
+
+
+
+
+
+
+
+&lt;!--
+
+
+	Tools - Yoast SEO &lsaquo;  &#8212; WordPress
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+			
+		
+			
+	
+	
+
+
+
+
+
+	
+
+
+
+	
+	
+		
+	&lt;!--
+	
+
+
+
+Skip to main content
+Skip to toolbar
+
+
+
+
+
+	
+	Dashboard
+	DashboardHomeUpdates 10ExactMetrics
+	
+	
+	Posts
+	PostsAll PostsAdd NewCategoriesTags
+	
+	Media
+	MediaLibraryAdd New
+	
+	Pages
+	PagesAll PagesAdd New
+	
+	Comments 00 Comments in moderation
+	
+	Drozd
+	Contact
+	ContactContact FormsAdd NewIntegration
+	
+	المنتور
+	المنتورتنظیماتمدیریت نقش‌هاابزارهااطلاعات سیستمدر حال شروع شدندریافت راهنماییفونت های سفارشیآیکون های سفارشی تغییر به نسخه حرفه ایالمنتور فارسی
+	
+	قالب ها
+	قالب هاقالب های ذخیره شدهپوسته سازپاپ آپافزودن جدیددسته بندی ها
+	
+	
+	Appearance
+	AppearanceThemesCustomizeWidgetsMenusHeaderBackgroundSkyWP Import DemoInstall PluginsHeaderBackgroundTheme Editor
+	
+	Plugins 7
+	Plugins 7Installed PluginsAdd NewPlugin Editor
+	
+	Users
+	UsersAll UsersAdd NewYour Profile
+	
+	Tools
+	ToolsAvailable ToolsImportExportSite HealthExport Personal DataErase Personal Data
+	
+	Settings
+	SettingsGeneralWritingReadingDiscussionMediaPermalinksPrivacyAkismet Anti-SpamGoogle Fonts
+	
+	SEO 00 notifications
+	SEO 00 notificationsGeneralSearch AppearanceSocialToolsPremium
+	WP Security
+	WP SecurityDashboardSettingsUser AccountsUser LoginUser RegistrationDatabase SecurityFilesystem SecurityBlacklist ManagerFirewallBrute ForceSPAM PreventionScannerMaintenanceMiscellaneous
+	ExactMetrics
+	ExactMetricsReportsSettingsTools AddonsAbout Us
+	Performance
+	PerformanceDashboardGeneral SettingsPage CacheMinifyDatabase CacheObject CacheBrowser CacheUser Agent GroupsReferrer GroupsCookie GroupsCDNFragment CacheUser ExperienceExtensionsFAQSupportInstallStatisticsAbout
+	
+	WP Fastest CacheCollapse menu
+
+
+
+
+		
+						
+				MenuAbout WordPressAbout WordPressWordPress.orgDocumentationSupportFeedbackvarzesh-kon.ir/blogVisit Site107 Plugin Updates, 3 Theme Updates00 Comments in moderationNewPostMediaPageقالبUserSEOConfiguration WizardKeyword ResearchKeyword research trainingGoogle AdsGoogle TrendsSEO SettingsGeneralSearch AppearanceSocialToolsPremiumPerformanceUpgrade PerformancePurge All CachesPurge ModulesOpcode CacheGeneral SettingsManage ExtensionsFAQSupport ExactMetricsDelete CacheClear All CacheDelete Cache and Minified CSS/JSHowdy, amirfarsadamirfarsadEdit My ProfileLog Out			
+						Log Out
+					
+
+		
+
+
+
+		
+
+			
+				
+				
+					
+						
+												
+					
+
+					
+					
+											
+				
+			
+				
+		Quote from Hello Dolly song, by Jerry Herman: You&#8217;re still glowin&#8217;, you&#8217;re still crowin&#8217;Please Setup Website Analytics to See Audience InsightsExactMetrics, WordPress analytics plugin, helps you connect your website with Google Analytics, so you can see how people find and use your website. Over 1 million website owners use ExactMetrics to see the stats that matter and grow their business.Connect ExactMetrics and Setup Website Analytics&nbsp;&nbsp;&nbsp;Learn More 
+There are updates available for the following plugins: Contact Form 7, Drozd Addons for Elementor and Elementor.
+Begin updating plugins | Dismiss this notice
+ 
+		
+				Tools - Yoast SEO
+		
+		
+		&laquo; Back to Tools pagerobots.txtEdit the content of your robots.txt:User-agent: *
+Disallow: /blog/wp-admin/
+Allow: /blog/wp-admin/admin-ajax.php
+Upgrade to Yoast SEO PremiumMultiple keyphrases: Increase your SEO reachNo more dead links: Easy redirect managerSuperfast internal linking suggestionsSocial media preview: Facebook &amp; Twitter24/7 email supportNo ads!Get Yoast SEO Premium(Opens in a new browser tab)
+			
+	
+		
+			Yoast recommendations for you		
+		
+			
+				Upgrade to Yoast SEO Premium			
+			
+				
+					Rank better with synonyms &amp; related keyphrases
+				
+				
+					Preview your page in Facebook and Twitter
+				
+				
+					Get real-time suggestions for internal links
+				
+				No more dead links a.k.a. 404 pages
+				24/7 email support
+				No ads!
+			
+
+			
+				Get Yoast SEO Premium(Opens in a new browser tab)			
+		
+		
+			
+				
+					Extend Yoast SEO				
+				
+					
+						
+							
+							Be found on Google Maps!
+							(Opens in a new browser tab)						
+						Our Local SEO plugin will help you rank in Google Maps and local results.					
+				
+				
+					
+						
+							
+							Rank in Google Video
+							(Opens in a new browser tab)						
+						Make sure your videos rank and are easy to share with our Video SEO plugin.					
+				
+				
+					
+						
+							
+							WooCommerce SEO
+							(Opens in a new browser tab)						
+						Optimize your shop&#039;s SEO and sell more products!					
+				
+				
+					
+						
+							
+							Rank in Google News
+							(Opens in a new browser tab)						
+						Start to optimize your site for Google News traffic today!					
+				
+			
+		
+		
+			
+				Learn SEO			
+			
+				Want to learn SEO from Team Yoast? Check out our Yoast SEO academy!We have both free and premium online courses to learn everything you need to know about SEO.			
+			
+				
+					Check out Yoast SEO academy				
+			
+		
+		
+			Remove these ads?
+			
+				
+					Upgrade to Yoast SEO Premium(Opens in a new browser tab)				
+			
+		
+	
+
+
+			
+
+
+
+
+
+		
+		Thank you for creating with WordPress.	
+	
+		Version 5.3.2	
+	
+
+
+
+
+
+
+
+
+
+
+
+		
+			Counting links in your textsAll your texts are already counted, there is no need to count them again.			Stop counting
+		
+			
+		
+	
+	
+	Close dialog
+			
+			
+		Session expired
+		Please log in again.
+		The login page will open in a new tab. After logging in you can close it and return to this page.
