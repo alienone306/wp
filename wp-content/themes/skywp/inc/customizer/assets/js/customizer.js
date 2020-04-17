@@ -46,6 +46,18 @@
 
 	/***** TOPBAR *****/
 
+	// Topbar shadow
+	wp.customize( 'skywp_topbar_shadow', function( value ){
+		value.bind( function( newval ){
+			if ( true == newval ) {
+				$( '#top-bar-wrap' ).addClass( 'topbar-shadow' );
+			} else {
+				$( '#top-bar-wrap' ).removeClass( 'topbar-shadow' );
+			}
+			
+		});
+	});
+
 	// Topbar background
 	wp.customize( 'skywp_bg_topbar', function( value ){
 		value.bind( function( newval ){
@@ -53,24 +65,104 @@
 		});
 	});
 
-	// Topbar social links color
-	wp.customize( 'skywp_social_links_color_topbar', function( value ){
+	// Topbar social buttons color
+	wp.customize( 'skywp_topbar_social_buttons_color', function( value ){
 		value.bind( function( newval ){
 			$( '.social-navigation .social-links-menu li a' ).css({ 'color': newval });
 		});
 	});
 
-	// First content area
-	wp.customize( 'sky_topbar_content_textarea_one', function( value ) {
-		value.bind( function( newval ) {
-			$( '#top-bar-content-one' ).html( newval );
+	// Width
+	wp.customize( 'topbar_width', function( value ){
+		value.bind( function( newval ){
+			$( '#top-bar-wrap .wrapper' ).css({ 'max-width': newval + 'px' });
 		});
 	});
 
-	// Second content area
-	wp.customize( 'sky_topbar_content_textarea_two', function( value ) {
-		value.bind( function( newval ) {
-			$( '#top-bar-content-two' ).html( newval );
+	// Padding
+	wp.customize( 'skywp_topbar_padding', function( value ){
+		value.bind( function( newval ){
+			$( '#top-bar-wrap #top-bar' ).css({ 'padding': newval });
+		});
+	});
+
+	// Visibility
+	wp.customize( 'skywp_topbar_visibility', function( value ){
+		value.bind( function( newval ){
+			if ( 'all-devices' == newval ) {
+				$( '#top-bar-wrap' ).addClass( 'all-devices' );
+			} else {
+				$( '#top-bar-wrap' ).removeClass( 'all-devices' );
+			}
+			if ( 'hide-tablet' == newval ) {
+				$( '#top-bar-wrap' ).addClass( 'hide-tablet' );
+			} else {
+				$( '#top-bar-wrap' ).removeClass( 'hide-tablet' );
+			}
+			if ( 'hide-mobile' == newval ) {
+				$( '#top-bar-wrap' ).addClass( 'hide-mobile' );
+			} else {
+				$( '#top-bar-wrap' ).removeClass( 'hide-mobile' );
+			}
+			if ( 'hide-tablet-mobile' == newval ) {
+				$( '#top-bar-wrap' ).addClass( 'hide-tablet-mobile' );
+			} else {
+				$( '#top-bar-wrap' ).removeClass( 'hide-tablet-mobile' );
+			}
+			
+		});
+	});
+
+	// Alignment
+	wp.customize( 'skywp_topbar_alignment', function( value ){
+		value.bind( function( newval ){
+			if ( 'space-between' == newval ) {
+				$( '#top-bar #top-bar-inner' ).addClass( 'space-between' );
+			} else {
+				$( '#top-bar #top-bar-inner' ).removeClass( 'space-between' );
+			}
+			if ( 'space-around' == newval ) {
+				$( '#top-bar #top-bar-inner' ).addClass( 'space-around' );
+			} else {
+				$( '#top-bar #top-bar-inner' ).removeClass( 'space-around' );
+			}
+			if ( 'center' == newval ) {
+				$( '#top-bar #top-bar-inner' ).addClass( 'center' );
+			} else {
+				$( '#top-bar #top-bar-inner' ).removeClass( 'center' );
+			}
+			if ( 'flex-start' == newval ) {
+				$( '#top-bar #top-bar-inner' ).addClass( 'flex-start' );
+			} else {
+				$( '#top-bar #top-bar-inner' ).removeClass( 'flex-start' );
+			}
+			if ( 'flex-end' == newval ) {
+				$( '#top-bar #top-bar-inner' ).addClass( 'flex-end' );
+			} else {
+				$( '#top-bar #top-bar-inner' ).removeClass( 'flex-end' );
+			}
+			
+		});
+	});
+
+	// Position
+	wp.customize( 'skywp_topbar_position', function( value ){
+		value.bind( function( newval ){
+			$( '#top-bar-wrap' ).css({ 'position': newval });
+		});
+	});
+
+	// Text color
+	wp.customize( 'skywp_topbar_text_color', function( value ){
+		value.bind( function( newval ){
+			$( '#top-bar-inner .site_widget' ).css({ 'color': newval });
+		});
+	});
+
+	// Font size
+	wp.customize( 'skywp_topbar_text_font_size', function( value ){
+		value.bind( function( newval ){
+			$( '#top-bar-inner .site_widget' ).css({ 'font-size': newval + 'px' });
 		});
 	});
 
@@ -217,7 +309,94 @@
 		});
 	});
 
-	
+
+
+
+
+	/***** FOOTER *****/
+
+	// Width
+	wp.customize( 'footer_width', function( value ){
+		value.bind( function( newval ){
+			$( '#footer-wrapper .wrapper' ).css({ 'max-width': newval + 'px' });
+		});
+	});
+
+	// Padding
+	wp.customize( 'skywp_footer_padding', function( value ){
+		value.bind( function( newval ){
+			$( '#footer-wrapper' ).css({ 'padding': newval });
+		});
+	});
+
+	// Background
+	wp.customize( 'skywp_footer_bg', function( value ) {
+		value.bind( function( newval ) {
+			$( '#footer-wrapper' ).css({'background': newval} );
+		});
+	});
+
+	// Title color
+	wp.customize( 'sky_footer_title_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '#footer-area .site_widget h2' ).css({'color': newval} );
+		});
+	});
+
+	// Border color
+	wp.customize( 'sky_footer_border_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '#footer-area .site_widget h2' ).css({'border-color': newval} );
+		});
+	});
+
+	// Text color
+	wp.customize( 'sky_footer_text_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '#footer-area .site_widget, #footer-area .site_widget a, #footer-area .author-theme a' ).css({'color': newval} );
+		});
+	});
+
+	// Tag cloud border color
+	wp.customize( 'skywp_footer_tag_cloud_border_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '#footer-area .site_widget .tagcloud a' ).css({'border-color': newval} );
+		});
+	});
+
+
+
+
+
+	/***** COPYRIGHT *****/
+
+	// Alignment
+	wp.customize( 'skywp_copyright_alignment', function( value ){
+		value.bind( function( newval ){
+			$( '#copyright .container' ).css({ '-webkit-box-pack': newval, '-ms-flex-pack': newval, 'justify-content': newval });
+		});
+	});
+
+	// Width
+	wp.customize( 'footer_copyright_width', function( value ){
+		value.bind( function( newval ){
+			$( '#copyright .wrapper' ).css({ 'max-width': newval + 'px' });
+		});
+	});
+
+	// Padding
+	wp.customize( 'skywp_footer_padding_copyright', function( value ){
+		value.bind( function( newval ){
+			$( '#copyright .container' ).css({ 'padding': newval });
+		});
+	});
+
+	// Background
+	wp.customize( 'skywp_copyright_bg', function( value ) {
+		value.bind( function( newval ) {
+			$( '#copyright' ).css({'background': newval} );
+		});
+	});
 
 
 	

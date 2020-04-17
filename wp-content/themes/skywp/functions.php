@@ -1,41 +1,4 @@
 <?php
-
-/**
- * Change the custom logo URL
- */
-function my_custom_logo_link() {
-
-	// The logo
-    $custom_logo_id = get_theme_mod( 'custom_logo' );
-
-    // If has logo
-    if ( $custom_logo_id ) {
-
-    	// Attr
-	    $custom_logo_attr = array(
-			'class'    => 'custom-logo',
-			'itemprop' => 'logo',
-		);
-
-		// Image alt
-		$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
-		if ( empty( $image_alt ) ) {
-			$custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
-		}
-
-	    // Get the image
-	    $html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
-			esc_url( 'varzesh-kon.ir' ),
-			wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
-		);
-
-	}
-
-	// Return
-    return $html;   
-}
-add_filter( 'get_custom_logo', 'my_custom_logo_link' );
-
 /**
  * SkyWP-theme functions and definitions.
  *
@@ -62,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Core constants
-define( 'SKYWP_THEME_VERSIONE', '1.2.1' );
+define( 'SKYWP_THEME_VERSIONE', '1.2.2' );
 define( 'SKYWP_THEME_DIR', get_template_directory() );
 define( 'SKYWP_THEME_URI', get_template_directory_uri() );
 
@@ -217,6 +180,7 @@ require_once( get_template_directory() . '/inc/customizer/controls/class-control
  */
 add_action( 'widgets_init', 'skywp_widgets_init' );
 function skywp_widgets_init() {
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Right Sidebar (Default)', 'skywp' ),
 		'id'            => 'sidebar-right',
@@ -232,6 +196,26 @@ function skywp_widgets_init() {
 		'id'            => 'sidebar-left',
 		'description'   => esc_html__( 'Widgets in this area will be displayed in the left sidebar area if you choose the Left Sidebar layout. (To display the Left Sidebar for a page you need to select the Left Sidebar when creating the page in Post Attributes).', 'skywp' ),
 		'before_widget' => '<div id="%1$s" class="site_widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'TopBar (Left)', 'skywp' ),
+		'id'            => 'topbar-left',
+		'description'   => esc_html__( 'Widgets in this area will be displayed in the top bar left.', 'skywp' ),
+		'before_widget' => '<div id="%1$s" class="site_widget widget-topbar-left %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'TopBar (Centered)', 'skywp' ),
+		'id'            => 'topbar-centered',
+		'description'   => esc_html__( 'Widgets in this area will be displayed in the top bar centered.', 'skywp' ),
+		'before_widget' => '<div id="%1$s" class="site_widget widget-topbar-centered %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -423,9 +407,6 @@ function skywp_scripts_styles() {
 	// Helps with accessibility for keyboard only users.
 	wp_enqueue_script('skywp-skip-link-focus-fix', SKYWP_THEME_URI . '/assets/js/skip-link-focus-fix.js', array('jquery'), '', true);
 
-	// File navigation.js.
-	wp_enqueue_script('skywp-navigation-js', SKYWP_THEME_URI . '/assets/js/navigation.js', array('jquery'), '', true);
-
 	// Load plugin scrolling pages
 	wp_enqueue_script('page-scroll-to-id-master', get_template_directory_uri() . '/assets/libs/page-scroll-to-id-master/jquery.malihu.PageScroll2id.min.js', array('jquery'), '', true);
 
@@ -568,7 +549,7 @@ function skywp_ocdi_after_import_setup() {
 add_filter( 'pt-ocdi/plugin_intro_text', 'skywp_ocdi_plugin_intro_text' );
 function skywp_ocdi_plugin_intro_text( $default_text ) {
 
-	$link_docs = esc_url( 'https://sky.urchenko.ru/get-started/' );
+	$link_docs = esc_url( 'https://urchenko.ru/get-started/' );
 	$info_text_install_docs = sprintf( esc_html__( 'Use the installation instructions %1$sGo to the documentation%2$s', 'skywp' ), '<a href="'. $link_docs .'" target="_blank">','</a>'
 	);
 

@@ -2,7 +2,7 @@
 /**
 * General Customizer Options
 *
-* @package Urchenko Technologies
+* @package Urchenko
 * @subpackage SkyWP WordPress theme
 * @since SkyWP 1.0.0
 */
@@ -20,18 +20,18 @@ add_action( 'customize_register', 'skywp_customizer_general_settings' );
 function skywp_customizer_general_settings( $wp_customize ) {
 
 	/**
-	 * Panel General Settings
+	 * Panel Main Settings
 	 */
 	$wp_customize->add_panel( 'sky_general_settings_panel', array(
-		'title' 			=> esc_html__( 'General Settings', 'skywp' ),
+		'title' 			=> esc_html__( 'Main Settings', 'skywp' ),
 		'priority' 			=> 23,
 	) );
 
 	/**
-	 * Section General Styling
+	 * Section Main Styling
 	 */
 	$wp_customize->add_section( 'sky_general_settings_styling', array(
-		'title'				=> esc_html__( 'General Styling', 'skywp' ),
+		'title'				=> esc_html__( 'Main Styling', 'skywp' ),
 		'priority'			=> 10,
 		'panel'				=> 'sky_general_settings_panel',
 	) );
@@ -361,7 +361,7 @@ function skywp_customizer_general_settings( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new SkyWP_Customize_Color_Control( $wp_customize, 'skywp_scroll_top_bg', array(
-		'label'     => __( 'Backgroung', 'skywp' ),
+		'label'     => __( 'Background', 'skywp' ),
 		'section'   => 'sky_setting_scroll_top',
 		'settings'  => 'skywp_scroll_top_bg',
 		'priority'			=> 10,
@@ -555,7 +555,7 @@ function skywp_customizer_general_settings( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new SkyWP_Customize_Color_Control( $wp_customize, 'sky_tag_bg_color', array(
-		'label'     => __( 'Backgroung', 'skywp' ),
+		'label'     => __( 'Background', 'skywp' ),
 		'section'   => 'sky_widget_tags_cloud',
 		'settings'  => 'sky_tag_bg_color',
 		'priority'			=> 10,

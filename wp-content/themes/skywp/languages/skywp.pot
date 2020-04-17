@@ -973,7 +973,7 @@ msgstr ""
 
 #: inc/customizer/settings/header.php:183
 #: inc/customizer/settings/topbar.php:178
-msgid "RGBA Backgroung"
+msgid "RGBA Background"
 msgstr ""
 
 #: inc/customizer/settings/header.php:184

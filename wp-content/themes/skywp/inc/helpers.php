@@ -36,7 +36,7 @@ TOPBAR
 add_action( 'skywp_topbar', 'skywp_topbar_template' );
 function skywp_topbar_template() {
 
-	if ( true == get_theme_mod( 'sky_topbar', false ) ) {
+	if ( true == get_theme_mod( 'skywp_topbar', false ) ) {
 		get_template_part( 'template-parts/topbar/layout' );
 	}
 
@@ -48,20 +48,14 @@ function skywp_topbar_template() {
  * @since 1.0.8
  */
 function skywp_topbar_visibility_classes() {
-	if ( 'all-devices' == get_theme_mod( 'sky_topbar_visibility', 'all-devices' ) ) {
-		$classes[] = 'all-devices';
-	}
-	elseif ( 'hide-tablet' == get_theme_mod( 'sky_topbar_visibility', 'hide-tablet' ) ) {
-		$classes[] = 'hide-tablet';
-	}
-	elseif ( 'hide-mobile' == get_theme_mod( 'sky_topbar_visibility', 'hide-mobile' ) ) {
-		$classes[] = 'hide-mobile';
-	}
-	elseif ( 'hide-tablet-mobile' == get_theme_mod( 'sky_topbar_visibility', 'hide-tablet-mobile' ) ) {
-		$classes[] = 'hide-tablet-mobile';
-	}
-	$classes = implode( ' ', $classes );
+	$classes[] = get_theme_mod( 'skywp_topbar_visibility', 'all-devices' );
 
+	// Topbar shadow
+	if ( true == get_theme_mod( 'skywp_topbar_shadow', false ) ) {
+		$classes[] = 'topbar-shadow';
+	}
+
+	$classes = implode( ' ', $classes );
 	return esc_attr( $classes );
 }
 
@@ -71,48 +65,10 @@ function skywp_topbar_visibility_classes() {
  * @since 1.0.8
  */
 function skywp_topbar_style_classes() {
-	if ( 'space-between' == get_theme_mod( 'sky_topbar_style_', 'space-between' ) ) {
-		$classes[] = 'top-bar-style-space-between';
-	}
-	elseif ( 'space-around' == get_theme_mod( 'sky_topbar_style_', 'space-around' ) ) {
-		$classes[] = 'top-bar-style-space-around';
-	}
-	elseif ( 'center' == get_theme_mod( 'sky_topbar_style_', 'center' ) ) {
-		$classes[] = 'top-bar-style-center';
-	}
-	elseif ( 'flex-start' == get_theme_mod( 'sky_topbar_style_', 'flex-start' ) ) {
-		$classes[] = 'top-bar-style-flex-start';
-	}
-	elseif ( 'flex-end' == get_theme_mod( 'sky_topbar_style_', 'flex-end' ) ) {
-		$classes[] = 'top-bar-style-flex-end';
-	}
+	
+	$classes = get_theme_mod( 'skywp_topbar_alignment', 'space-between' );
 
-	$classes = implode( ' ', $classes );
 	return esc_attr( $classes );
-}
-
-/**
- * Get content first
- *
- * @since 1.0.8
- */
-add_action( 'skywp_topbar_content_before', 'skywp_get_topbar_content_first' );
-function skywp_get_topbar_content_first() {
-	if ( true == get_theme_mod( 'sky_topbar_content_one', true ) ) {
-		get_template_part( 'template-parts/topbar/content-one' );
-	}
-}
-
-/**
- * Get content second
- *
- * @since 1.0.8
- */
-add_action( 'skywp_topbar_content', 'skywp_get_topbar_content_second' );
-function skywp_get_topbar_content_second() {
-	if ( true == get_theme_mod( 'sky_topbar_content_two', true ) ) {
-		get_template_part( 'template-parts/topbar/content-two' );
-	}
 }
 
 /**
@@ -135,12 +91,11 @@ function skywp_custom_styles_customizer() {
 
 	// TOPBAR
 	$topbar_width = absint( get_theme_mod( 'topbar_width', '1200' ) ) .'px';
-	$sky_topbar_padding = esc_attr( get_theme_mod( 'sky_topbar_padding', '0px 0px 0px 0px' ) );
-	$sky_topbar_position = esc_attr( get_theme_mod( 'sky_topbar_position', 'relative' ) );
+	$skywp_topbar_padding = esc_attr( get_theme_mod( 'skywp_topbar_padding', '0px 0px 0px 0px' ) );
+	$skywp_topbar_position = esc_attr( get_theme_mod( 'skywp_topbar_position', 'relative' ) );
 	$skywp_bg_topbar = esc_attr( get_theme_mod( 'skywp_bg_topbar', '#ffffff' ) );
-	$sky_topbar_text_color = esc_attr( get_theme_mod( 'sky_topbar_text_color', '#c7c7c7' ) );
-	$sky_topbar_font_size = absint( get_theme_mod( 'sky_topbar_font_size', '15' ) ) .'px';
-	$skywp_social_links_color_topbar = esc_attr( get_theme_mod( 'skywp_social_links_color_topbar', '#333333' ) );
+	$skywp_topbar_text_color = esc_attr( get_theme_mod( 'skywp_topbar_text_color', '#c7c7c7' ) );
+	$skywp_topbar_social_buttons_color = esc_attr( get_theme_mod( 'skywp_topbar_social_buttons_color', '#333333' ) );
 
 	// HEADER
 	$header_width = absint( get_theme_mod( 'header_width', '1200' ) ) .'px';
@@ -224,16 +179,17 @@ function skywp_custom_styles_customizer() {
 
 	// FOOTER
 	$footer_width = absint( get_theme_mod( 'footer_width', '1200' ) ) .'px';
-	$sky_footer_bg = esc_attr( get_theme_mod( 'sky_footer_bg', '#212121' ) );
+	$skywp_footer_bg = esc_attr( get_theme_mod( 'skywp_footer_bg', '#212121' ) );
 	$skywp_footer_padding = esc_attr( get_theme_mod( 'skywp_footer_padding', '85px 0px 85px 0px' ) );
 	$sky_footer_title_color = esc_attr( get_theme_mod( 'sky_footer_title_color', '#ffffff' ) );
 	$sky_footer_border_color = esc_attr( get_theme_mod( 'sky_footer_border_color', '#c7c7c7' ) );
 	$sky_footer_text_color = esc_attr( get_theme_mod( 'sky_footer_text_color', '#c7c7c7' ) );
+	$skywp_tag_cloud_color_hover = esc_attr( get_theme_mod( 'skywp_tag_cloud_color_hover', '#ffffff' ) );
 	$skywp_footer_tag_cloud_border_color = esc_attr( get_theme_mod( 'skywp_footer_tag_cloud_border_color', '#c7c7c7' ) );
 
 	// COPYRIGHT
 	$footer_copyright_width = absint( get_theme_mod( 'footer_copyright_width', '1200' ) ) .'px';
-	$sky_copyright_bg = esc_attr( get_theme_mod( 'sky_copyright_bg', '#191c1e' ) );
+	$skywp_copyright_bg = esc_attr( get_theme_mod( 'skywp_copyright_bg', '#191c1e' ) );
 	$skywp_footer_padding_copyright = esc_attr( get_theme_mod( 'skywp_footer_padding_copyright', '25px 0px 25px 0px' ) );
 	$skywp_copyright_alignment = esc_attr( get_theme_mod( 'skywp_copyright_alignment', 'center' ) );
 	
@@ -270,7 +226,8 @@ function skywp_custom_styles_customizer() {
 		.page-attachment .entry-footer a:hover,
 		#footer-area .author-theme a:hover,
 		.page-attachment .image-navigation .nav-links a:hover,
-		.page-attachment .entry-footer a:hover { color: $sky_links_color_hover; }
+		.page-attachment .entry-footer a:hover,
+		#footer-area .footer-wrap .site_widget a:hover { color: $sky_links_color_hover; }
 
 		#content-wrap .post-content-wrap .entry-title,
 		#comments .comments-title,
@@ -285,12 +242,10 @@ function skywp_custom_styles_customizer() {
 
 		/*** TOPBAR ***/
 		#top-bar-wrap .wrapper { max-width: $topbar_width; }
-		#top-bar { padding: $sky_topbar_padding; }
-		#top-bar-wrap { position: $sky_topbar_position; background: $skywp_bg_topbar; }
-		#top-bar-inner { color: $sky_topbar_text_color; }
-		#top-bar-inner #top-bar-content-one,
-		#top-bar-inner #top-bar-content-two { font-size: $sky_topbar_font_size; }
-		.social-navigation .social-links-menu li a { color: $skywp_social_links_color_topbar; }
+		#top-bar { padding: $skywp_topbar_padding; }
+		#top-bar-wrap { position: $skywp_topbar_position; background: $skywp_bg_topbar; }
+		#top-bar-inner .site_widget { color: $skywp_topbar_text_color; }
+		.social-navigation .social-links-menu li a { color: $skywp_topbar_social_buttons_color; }
 
 		/*** HEADER ***/
 		#site-header .wrapper { max-width: $header_width; }
@@ -420,7 +375,7 @@ function skywp_custom_styles_customizer() {
 
 		/*** FOOTER ***/
 		#footer-wrapper .wrapper { max-width: $footer_width; }
-		#footer-wrapper { background: $sky_footer_bg; padding: $skywp_footer_padding; }
+		#footer-wrapper { background: $skywp_footer_bg; padding: $skywp_footer_padding; }
 		#footer-area .site_widget h2 { color: $sky_footer_title_color; border-bottom: 1px solid $sky_footer_border_color; }
 		#footer-area .site_widget,
 		#footer-area .site_widget a,
@@ -428,11 +383,12 @@ function skywp_custom_styles_customizer() {
 		#footer-area .site_widget a:hover { color: $sky_tag_link_color_hover; }
 		#footer-area .site_widget .tagcloud a { border: 1px solid $skywp_footer_tag_cloud_border_color; }
 		#footer-area .site_widget .tagcloud a:hover { border: 1px solid $skywp_accent_color; }
+		#footer-area .footer-wrap .site_widget.widget_tag_cloud a:hover { color: $skywp_tag_cloud_color_hover; }
 
 
 		/*** COPYRIGHT ***/
 		#copyright .wrapper { max-width: $footer_copyright_width; }
-		#copyright { background: $sky_copyright_bg; }
+		#copyright { background: $skywp_copyright_bg; }
 		#copyright .container { padding: $skywp_footer_padding_copyright;
 		-webkit-box-pack: $skywp_copyright_alignment;
 	    -ms-flex-pack: $skywp_copyright_alignment;
@@ -681,7 +637,7 @@ add_action( 'skywp_footer_layout', 'skywp_footer_layout_templates' );
 function skywp_footer_layout_templates() {
 
 	// Footer 4 | 25%
-	if ( '4_25' == get_theme_mod('sky_footer_layout', '4_25' ) ) {
+	if ( '4_25' == get_theme_mod('skywp_footer_layout', '4_25' ) ) {
 		get_template_part( 'template-parts/footer/footer-4-25' );
 	}
 
@@ -696,7 +652,7 @@ if ( ! function_exists( 'skywp_footer_classes' ) ) {
 
 	function skywp_footer_classes() {
 
-	if ( '4_25' == get_theme_mod('sky_footer_layout', '4_25' ) ) {
+	if ( '4_25' == get_theme_mod('skywp_footer_layout', '4_25' ) ) {
 		$classes[] = 'four-columns';
 	}
 

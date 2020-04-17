@@ -808,60 +808,79 @@ TOPBAR
 	    -ms-flex-align: center;
 	        align-items: center;
 }
-#top-bar-inner #top-bar-content-one,
-#top-bar-inner #top-bar-content-two {
-	font-size: 15px;
-}
-#top-bar-inner .classes {
-	margin: 0 15px;
-}
-@media screen and (max-width: 1024px) {
-	
-	#top-bar-inner .classes {
-		margin: 5px 15px;
-	}
+#top-bar-wrap.topbar-shadow {
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0, .1);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0, .1);
 }
 
-.top-bar-style-space-between {
+
+
+#top-bar-inner .site_widget {
+	margin-bottom: 0px;
+}
+#top-bar-inner .site_widget .widget-title {
+	display: none;
+}
+
+
+
+#top-bar #top-bar-inner.space-between {
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
-.top-bar-style-space-around {
+#top-bar #top-bar-inner.space-around {
 	-ms-flex-pack: distribute;
 	    justify-content: space-around;
 }
-.top-bar-style-center {
+#top-bar #top-bar-inner.center {
 	-webkit-box-pack: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
 }
-.top-bar-style-flex-start {
+#top-bar #top-bar-inner.flex-start {
 	-webkit-box-pack: start;
 	    -ms-flex-pack: start;
 	        justify-content: flex-start;
 }
-.top-bar-style-flex-end {
+#top-bar #top-bar-inner.flex-end {
 	-webkit-box-pack: end;
 	    -ms-flex-pack: end;
 	        justify-content: flex-end;
 }
+
+
+@media screen and (min-width: 769px) {
+#top-bar-inner .widget-topbar-left {
+	margin-right: 10px;
+}
+#top-bar-inner .widget-topbar-centered {
+	margin: 0 10px;
+}
+#top-bar-inner .social-navigation {
+	margin-left: 10px;
+}
+}
+
 @media screen and (max-width: 768px) {
 #top-bar-inner {
   display: block;
   text-align: center;
 }
-#top-bar-inner #top-bar-content-one,
-#top-bar-inner #top-bar-content-two {
-	display: inline-block;
-	margin: 3px 5px;
+.social-navigation .social-links-menu {
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 }
+
+
+
 /*------------------------------------*
 	Hide On Tablet and Mobile
 *------------------------------------*/
 @media screen and (max-width: 767px) {
-  .hide-tablet-mobile {
+  #top-bar-wrap.hide-tablet-mobile {
     display: none !important;
   }
 }
@@ -869,7 +888,7 @@ TOPBAR
 	Hide On Mobile
 *------------------------------------*/
 @media screen and (max-width: 480px) {
-  .hide-mobile {
+  #top-bar-wrap.hide-mobile {
     display: none !important;
   }
 }
@@ -877,7 +896,7 @@ TOPBAR
 	Hide On Tablet
 *------------------------------------*/
 @media screen and (min-width: 481px) and (max-width: 767px) {
-  .hide-tablet {
+  #top-bar-wrap.hide-tablet {
     display: none !important;
   }
 }

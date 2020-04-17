@@ -2,7 +2,7 @@
 /**
 * Topbar layout
 *
-* @package Urchenko Technologies
+* @package Urchenko
 * @subpackage SkyWP WordPress theme
 * @since SkyWP 1.0.0
 */
@@ -19,13 +19,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div id="top-bar-inner" class="<?php echo esc_attr( skywp_topbar_style_classes() ) ?>">
 
 			<?php
-			do_action( 'skywp_topbar_content_before' );
+			if ( is_active_sidebar( 'topbar-left' ) ) {
+				dynamic_sidebar('topbar-left');
+			}
 
-			do_action( 'skywp_topbar_content' );
+			if ( is_active_sidebar( 'topbar-centered' ) ) {
+				dynamic_sidebar('topbar-centered');
+			}
 
-			do_action( 'skywp_topbar_content_after' );
-			?>
-			<?php if ( has_nav_menu( 'social_topbar' ) ) : ?>
+			if ( has_nav_menu( 'social_topbar' ) ) : ?>
 				<nav class="social-navigation" role="navigation">
 					<?php
 						wp_nav_menu(

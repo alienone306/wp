@@ -74,7 +74,7 @@ function skywp_customizer_header_options( $wp_customize ) {
 	) ) );
 
 	/**
-	 * Header Border Bottom
+	 * Header Shadow Bottom
 	 */
 	$wp_customize->add_setting( 'sky_header_border_bottom', array(
 		'default'				=> false,
@@ -82,7 +82,7 @@ function skywp_customizer_header_options( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'sky_header_border_bottom', array(
-		'label'					=> esc_html__('Border bottom', 'skywp'),
+		'label'					=> esc_html__('Shadow', 'skywp'),
 		'type'					=> 'checkbox',
 		'section'				=> 'sky_header_general',
 		'settings'				=> 'sky_header_border_bottom',
@@ -213,7 +213,7 @@ function skywp_customizer_header_options( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new SkyWP_Customize_Color_Control( $wp_customize, 'skywp_bg_header', array(
-		'label'     => __( 'Backgroung', 'skywp' ),
+		'label'     => __( 'Background', 'skywp' ),
 		'section'   => 'sky_header_general',
 		'settings'  => 'skywp_bg_header',
 		'priority'			=> 10,
@@ -229,7 +229,7 @@ function skywp_customizer_header_options( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new SkyWP_Customize_Color_Control( $wp_customize, 'skywp_bg_sticky_header', array(
-		'label'     => __( 'Backgroung Sticky', 'skywp' ),
+		'label'     => __( 'Background Sticky', 'skywp' ),
 		'section'   => 'sky_header_general',
 		'settings'  => 'skywp_bg_sticky_header',
 		'priority'			=> 10,

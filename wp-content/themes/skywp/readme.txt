@@ -21,20 +21,28 @@ See the detailed instructions for installing our demo sites: https://urchenko.ru
 
 == Frequently Asked Questions ==
 = Can I install the demo version in one click? =
-No, WordPress banned the installation in one click.
+Yes, you can install our demo data. Follow the instructions: https://urchenko.ru/get-started/
 
 == Screenshots ==
 1. /assets/img/screenshot-1.png
 
 == Changelog ==
+
+= 1.2.2 =
+* Updated the Top Bar, now you can add widgets to the Top Bar.
+* In the footer, the function of changing colors and styles without refreshing the page is added.
+* Fixed color hover in the footer.
+
 = 1.0.5 =
 * Added additional settings in the Customizer to the scrolling up button
+
 = 1.0.3 =
 * Fix Footer
 * Fix Copyright
 * Added new layouts header
 * Added settings for turning the search button on and off
 * Fix Topbar
+
 = 1.0.2 =
 * Change file readme.txt
 
